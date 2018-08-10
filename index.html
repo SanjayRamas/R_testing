@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Sales</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<!-- External Scripts  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/18.1.5/css/dx.spa.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/18.1.5/css/dx.common.css" />
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!--link rel="dx-theme" data-theme="generic.greenmist" href="theme.css" /-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script>window.angular || document.write(decodeURIComponent('%3Cscript src="js/angular.min.js"%3E%3C\/script%3E'))</script>
+    <script src="https://cdn3.devexpress.com/jslib/18.1.5/js/dx.all.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.9/jquery.csv.min.js"></script>
+	<!-- Custom CSS -->
+    <link rel="stylesheet" type ="text/css" href ="CSS/styles.css" />
+	<link rel='stylesheet' href='CSS/loading-bar.min.css' type='text/css' media='all' />
+	<!-- Custom JS -->
+    <script src="JS/index.js"></script>
+	<script type='text/javascript' src='JS/loading-bar.min.js'></script>
+	
+</head>
+<body class="dx-viewport">
+	<div class="top-container panel-heading">
+		<h1 align="center" class="panel-title" >SALES FORECASTING</h1>
+	</div>
+	<br>
+    <div class="sales-container" ng-app="SalesApp" ng-controller="SalesController">
+		<div id="fileuploader">
+            <div uib-accordion-group class="panel-default">
+                <div dx-file-uploader="options" class="file-upload">
+                </div>
+				<!-- Slider form  -->
+				<div dx-form="valueForm" id="form1" class="custom-height-slider"></div>
+				<!-- Submit Action-->
+				<div dx-button="onSubmit" class="form-submit"><B>SUBMIT</B></div>
+				
+                <div class="content">
+                  <!-- Progress Bar  -->
+				  <div id="progressBarStatus" dx-progress-bar="progressBarOptions"></div>
+               </div>      
+			   <!-- OPTIONS Menu   -->
+            <div class="options">
+                <div class="caption">Options</div>
+				<!-- FILE TYPE  -->
+                <div class="option">
+                    <span>1. File types</span>
+                    <div dx-select-box="acceptOptions"></div>
+                </div>         
+				<!-- SLIDER1 option -->
+                <div class="option">
+                    <span>2. Hidden Layer</span>
+                    <br>Min:<div dx-number-box="numberBox1.startValue"></div>
+					Max:<div dx-number-box="numberBox1.endValue"></div>
+                </div>  	
+				<!-- SLIDER2 option -->
+                <div class="option">
+                    <span>3. Epochs</span>
+                    <br>Min:<div dx-number-box="numberBox2.startValue"></div>
+					Max:<div dx-number-box="numberBox2.endValue"></div>
+                </div> 
+				<!-- SLIDER3 option -->
+                <div class="option">
+                    <span>4. Peak</span>
+                    <br>Min:<div dx-number-box="numberBox3.startValue"></div>
+					Max:<div dx-number-box="numberBox3.endValue"></div>
+                </div> 				
+            </div>
+			
+			
+        </div>
+    </div>
+   
+</div>
+</body>
+</html>
